@@ -9,4 +9,8 @@ class student extends Model
 {
     /** @use HasFactory<\Database\Factories\StudentFactory> */
     use HasFactory;
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'stud_ID', 'id');
+    }
 }
